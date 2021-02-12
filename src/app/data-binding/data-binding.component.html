@@ -1,0 +1,115 @@
+<!-- <section class="container-fluid">
+  <article>
+    <h3>Component Angular Material</h3>
+    <mat-tab-group mat-align-tabs="start">
+      <mat-tab label="1) Interpolation">
+        <article>
+          <h3>Interpolation / interpolação</h3>
+          <p>String renderizada com interpolação {{ url }}</p>
+          <p>O resultado de 1 + 1 é: {{ 1 + 1 }} </p>
+          <p>O resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>
+          <p>Curso angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
+        </article>
+      </mat-tab>
+
+      <mat-tab label="2) Property Binding">
+        <article>
+          <h3>Property Binding / binding de propriedade</h3>
+          <img src="{{ urlImage }}" alt="">
+          <img [src]="urlImage" alt="">
+          <img bind-src="urlImage" alt="">
+        </article>
+      </mat-tab>
+
+      <mat-tab label="3) Style Binding">
+        <article>
+          <h3>Class e Style Binding</h3>
+          <div>
+            Selecione uma classe
+            <select #classe (change)="0">
+              <option value="alert-success">Sucesso</option>
+              <option value="alert-danger">Erro</option>
+              <option value="alert-warning">Alerta</option>
+              <option value="alert-info">Info</option>
+            </select>
+            <br>
+            <br>
+
+            <div class="alert {{ classe.value }}" role="alert">
+              texto colorio conforme valor do combobox.
+            </div>
+
+            <div class="alert" role="alert"
+            [class.alert-success]="classe.value == 'alert-success'">
+              A simple success alert—check it out!
+            </div>
+            <div class="alert" role="alert"
+            [class.alert-danger]="classe.value == 'alert-danger'">
+              A simple danger alert—check it out!
+            </div>
+            <div class="alert" role="alert"
+            [class.alert-warning]="classe.value == 'alert-warning'">
+              A simple warning alert—check it out!
+            </div>
+            <div class="alert" role="alert"
+            [class.alert-info]="classe.value == 'alert-info'">
+              A simple info alert—check it out!
+            </div>
+
+            <div  class="alert alert-danger" role="alert"
+            [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+              Esse texto só aparece em caso de erro.
+            </div>
+
+          </div>
+        </article>
+      </mat-tab>
+
+      <mat-tab label="4) Event Binding">
+        <article>
+          <h3>Event Binding</h3>
+          <div>
+            <button (click)="botaoClicado()" class="btn btn-primary">Me clique</button>
+            <button on-click="botaoClicado()" class="btn btn-primary">Me clique</button>
+          </div>
+
+          <br>
+          <br>
+
+          <input type="text"
+          (keyup)="onKeyUp($event)"
+          (keyup.enter)="salvarValor(campoInput.value)"
+          (blur)="salvarValor(campoInput.value)"
+          #campoInput
+          />
+          <p>Valor Atual: {{ valorAtual }}</p>
+          <p>Valor Salvo: {{ valorSalvo }}</p>
+
+          <br>
+          <br>
+
+          <span
+          (mouseover)="onMouseOverOut()"
+          (mouseout)="onMouseOverOut()"
+          [class.highlight]="isMouseOver"
+          >Passe o mouse sobre mim</span>
+        </article>
+      </mat-tab>
+
+      <mat-tab label="5) Two-way data binding">
+        <app-meu-form></app-meu-form>
+      </mat-tab>
+    </mat-tab-group>
+  </article>
+</section> -->
+
+<section class="container-fluid">
+  <article>
+    <h3>Input Output Properties</h3>
+    <app-curso [nome]="nomeCurso"></app-curso>
+
+    <contador [valor]="valorInicial"
+    (mudouValor)="onMudouValor($event)"
+    ></contador>
+  </article>
+</section>
